@@ -23,14 +23,13 @@ function ProductSlider({ products, itemListName }: Props) {
         }}
       >
         <div class="col-start-1 col-span-3 row-start-1 row-span-1">
-          <Slider class="carousel carousel-center sm:carousel-end gap-5 sm:gap-10 w-full">
+          <Slider class="keen-slider">
             {products?.map((product, index) => (
               <Slider.Item
                 index={index}
                 class={clx(
-                  "carousel-item",
-                  "first:pl-5 first:sm:pl-0",
-                  "last:pr-5 last:sm:pr-0",
+                  "keen-slider__slide",
+                  "min-w-[297px] max-w-[297px] sm:min-w-[320px] sm:max-w-[320px]",
                 )}
               >
                 <ProductCard
@@ -56,7 +55,7 @@ function ProductSlider({ products, itemListName }: Props) {
           </Slider.NextButton>
         </div>
       </div>
-      <Slider.JS rootId={id} />
+      <Slider.JS rootId={id} infinite />
     </>
   );
 }

@@ -138,9 +138,12 @@ function Carousel({ images = [], preload, interval }: Props) {
       )}
     >
       <div class="col-span-full row-span-full">
-        <Slider class="carousel carousel-center w-full gap-6">
+        <Slider class="keen-slider">
           {images.map((image, index) => (
-            <Slider.Item index={index} class="carousel-item w-full">
+            <Slider.Item
+              index={index}
+              class="keen-slider__slide min-w-[100vw] max-w-[100vw]"
+            >
               <BannerItem image={image} lcp={index === 0 && preload} />
             </Slider.Item>
           ))}
